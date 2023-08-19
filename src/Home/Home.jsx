@@ -1,0 +1,16 @@
+import Hero from "./Hero";
+import NewsTab from "./NewsTab";
+import TopMenu from "./shared/TopMenu";
+/* NewsTab is a components */
+const Home = () => {
+    return (
+        <div className="mt-5">
+            <Hero />
+
+            <TopMenu title={'টপ টেন'} NewsTabComponent={NewsTab} />
+            <TopMenu title={'জাতীয়'} />
+        </div>
+    );
+};
+
+export default Home;
