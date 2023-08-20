@@ -7,6 +7,17 @@ const Footer = () => {
         <footer className="pt-5 bg-body-secondary">
             <div className="container  px-4 px-md-3 ">
                 <div className="row">
+                    <div className="  col-lg-3 mb-3 pt-2">
+
+                        <div>
+                            <p>উপদেষ্টা সম্পাদকঃ সাবেদ উর রহমান <br />
+                                সম্পাদক ও প্রকাশকঃ মোঃ মানিক বাবলু<br />
+                                উপ-সম্পাদকঃ মুহাম্মদ ওসমান<br />
+                            Phone: +880 1869 913 486</p>
+                        </div>
+
+
+                    </div>
                     <div className="col-lg-3 mb-3">
                         <div className="list-unstyled small">
                             <img src="http://newsnow24.com/newsnow-logo.png" width={'230px'} alt="Logo" />
@@ -17,16 +28,7 @@ const Footer = () => {
                     </div>
 
 
-                    <div className="  col-lg-3 mb-3 pt-2">
 
-                        <div>
-                            <p>উপদেষ্টা সম্পাদকঃ সাবেদ উর রহমান <br />
-                                সম্পাদক ও প্রকাশকঃ মোঃ মানিক বাবলু<br />
-                                উপ-সম্পাদকঃ মুহাম্মদ ওসমান</p><br />
-                        </div>
-
-
-                    </div>
                     <div className="col-6 col-lg-3 mb-3">
                         <h5>Dhaka Office:</h5>
                         <p> House-55, Road-08, Block-D, <br />
