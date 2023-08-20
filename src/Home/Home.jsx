@@ -10,7 +10,8 @@ const Home = () => {
 
             <TopMenu title={'টপ টেন'} NewsTabComponent={NewsTab} />
             <TopMenu title={'জাতীয়'} />
-            <TopMenu title={'জাতীয়'} />
+            <TopMenu title={'রাজনীতি'} />
+            <TopMenu title={'বাংলাদেশ'} />
            
         </div>
     );

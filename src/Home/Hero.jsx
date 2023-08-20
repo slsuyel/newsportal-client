@@ -24,7 +24,7 @@ const Hero = () => {
 
             <div className="col-md-3">
                 <div>
-                    <a href="">  <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className="img-fluid rounded shadow-sm" /></a>
+                    <a href="" className="text-center">  <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className="img-fluid rounded shadow-sm" /></a>
                 </div>
                 <NewsCard />
             </div>
