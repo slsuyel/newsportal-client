@@ -1,6 +1,5 @@
 body {
   font-family: 'AdorshoLipi', sans-serif !important;
-  background-color: #e9ecef;
   /* max-width: 1200px;
   margin: 0 auto; */
   /* overflow-x: hidden; */
@@ -153,4 +152,24 @@ code {
 
 .pointer {
   cursor: pointer;
+}
+
+/* DARK */
+
+/* Regular styles */
+/* Regular styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+.newscard.dark-mode {
+  background-color: #444;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.234) !important;
 }

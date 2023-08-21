@@ -1,7 +1,7 @@
 const Logo = () => {
     return (
         <div className="d-none d-md-block">
-            <div className=" bg-white py-4 row w-100 justify-content-between mx-auto">
+            <div className="light-moods py-4 row w-100 justify-content-between mx-auto">
                 <a className="col-md-3 " href="#">
                     <img className="img-fluid px-2" src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" />
                 </a>

@@ -12,11 +12,11 @@ const Ticker = () => {
     ];
 
     return (
-        <div className=" container-fluid my-3">
+        <div className="light-moods-ticker container-fluid my-3">
             <div className="row">
                 <div className="col-md-12">
                     <div
-                        className="d-flex justify-content-between align-items-center breaking-news bg-white"
+                        className="d-flex justify-content-between align-items-center breaking-news"
 
                     >
                         <div
@@ -31,7 +31,7 @@ const Ticker = () => {
                         >
                             {
                                 fakeBlogs.map(blog => (
-                                    <Link key={blog._id} to='/blog' className='text-decoration-none text-dark onhover'>
+                                    <Link key={blog._id} to='/blog' className='text-decoration-none  onhover'>
                                         {blog?.title} 🔴
                                     </Link>
                                 ))

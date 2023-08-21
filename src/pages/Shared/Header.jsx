@@ -3,6 +3,7 @@ import { Navbar, Nav, } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
+import DarkMode from '../../components/DarkMode';
 
 const menuItems = [
     'সর্বশেষ',
@@ -26,7 +27,6 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -34,6 +34,9 @@ const Header = () => {
     const handleDropdownToggle = () => {
         setIsDropdownOpen(prevState => !prevState);
     };
+
+
+
     return (
         <>
 
@@ -63,7 +66,12 @@ const Header = () => {
                         >
                             <i className="fas fa-search"></i>
                         </button>
-                        <div className={`dropdown-menu p-0 rounded-3 rounded-end-5 search-btn  ${isDropdownOpen ? 'show' : ''}`}>
+                        <div className={`dropdown-menu p-0 rounded-0 rounded-end-5  ${isDropdownOpen ? 'show' : ''}`} style={{
+                            marginLeft: "-214px",
+                            width: "254px",
+                            marginTop: "6px",
+                            background: "red"
+                        }}>
                             <form className="d-flex">
                                 <input type="search" placeholder="খুঁজুন" aria-label="Search" className="form-control border-0 bg-2nd " />
 
@@ -74,16 +82,14 @@ const Header = () => {
 
 
                     <div>
-                        <button className="btn bg-2nd px-2  py-0 rounded-circle">
-                            <i className="fas fa-moon"></i>
-                        </button>
+                        <DarkMode />
                     </div>
                 </div>
             </Navbar>
 
 
             {/* d-none d-md-block d-xl-none */}
-            <Navbar sticky="top" collapseOnSelect expand="lg" className='d-none d-sm-none d-md-block border-2 border-bottom fw-bold  navbar navbar-expand-lg navbar-light pri-bg py-0 shadow-sm sticky-top' variant="light">
+            <Navbar sticky="top" collapseOnSelect expand="lg" className='d-none d-sm-none d-md-block border-2 border-bottom fw-bold  navbar navbar-expand-lg  pri-bg py-0 shadow-sm '>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-evenly navbar-nav w-100 container">
@@ -98,6 +104,7 @@ const Header = () => {
                 </Navbar.Collapse>
 
             </Navbar>
+            
             <Offcanvas show={show} onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 

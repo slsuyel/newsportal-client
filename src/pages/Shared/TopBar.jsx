@@ -1,11 +1,16 @@
 import { useState } from "react";
+import DarkMode from "../../components/DarkMode";
 
 const TopBar = () => {
+
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleDropdownToggle = () => {
         setIsDropdownOpen(prevState => !prevState);
     };
+
+
+
     return (
         <div className="mx-auto pri-bg text-white py-1 d-none d-sm-none d-md-block">
             <div className="mb-1 container d-flex justify-content-between align-items-center">
@@ -41,9 +46,7 @@ const TopBar = () => {
                     </div>
 
 
-                    <button className="btn bg-2nd px-2  py-0 rounded-circle">
-                        <i className="fas fa-moon"></i>
-                    </button>
+                    <DarkMode />
                 </div>
             </div>
         </div>
