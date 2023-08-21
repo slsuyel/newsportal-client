@@ -26,17 +26,16 @@ const MyAreaNews = () => {
     }, []);
 
 
-    const getDistricts = (divisionName) => {
-        return fetch(`https://bdapis.com/api/v1.1/division/${divisionName}`)
-            .then(res => res.json())
-            .then(data => {
-                setDistricts(data.data);
-                return data.data;
-            })
-            .catch(error => {
-                console.error('Error fetching division data:', error);
-                throw error;
-            });
+    const getDistricts = async (divisionName) => {
+        try {
+            const res = await fetch(`https://bdapis.com/api/v1.1/division/${divisionName}`);
+            const data = await res.json();
+            setDistricts(data.data);
+            return data.data;
+        } catch (error) {
+            console.error('Error fetching division data:', error);
+            throw error;
+        }
     };
 
 
