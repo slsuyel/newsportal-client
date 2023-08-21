@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import NewsCard from "../NewsCard";
 import { Link } from 'react-router-dom';
-const TopMenu = ({ title, NewsTabComponent }) => {
+const TopMenu = ({ title,  Sidebar }) => {
     return (
         <div className="mx-4">
             <div className='align-items-end border-2 border-bottom border-secondary-subtle d-flex justify-content-between mt-2 pb-3'>
@@ -51,7 +51,7 @@ const TopMenu = ({ title, NewsTabComponent }) => {
                 </div>
 
                 <div className='col-md-3'>
-                    {NewsTabComponent && <NewsTabComponent />}
+                    {Sidebar && <Sidebar />}
 
                     <div>
                         <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/Shopping-Bag.gif" alt="" className="img-fluid mt-2 py-2 rounded shadow" />
