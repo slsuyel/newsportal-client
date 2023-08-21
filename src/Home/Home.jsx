@@ -11,7 +11,6 @@ const Home = () => {
     return (
         <div className="mt-5">
             <Hero />
-
             <TopMenu title={'টপ টেন'} Sidebar={Sidebar1} />
             <CategoryMidCard title={'বাংলাদেশ'} Sidebar={MyAreaNews} />
             <TopMenu title={'জাতীয়'} />

@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react"; // Don't forget to import 'R
 import { Form } from "react-bootstrap";
 
 const MyAreaNews = () => {
+    const [upazillas, setUpazillas] = useState([]);
 
+    const [selectedupazilla, setselectedUpazilla] = useState('');
     const [selectedDivision, setSelectedDivision] = useState('');
     const [selectedDistrict, setSelectedDistrict] = useState('');
 
@@ -44,15 +46,25 @@ const MyAreaNews = () => {
         setDistricts([]);
         getDistricts(selectedValue);
     };
-
-    const handleDistrictChange = event => {
+    const handleDistrictChange = async (event) => {
         const selectedValue = event.target.value;
         setSelectedDistrict(selectedValue);
 
+        try {
+            const response = await fetch(`https://bdapis.com/api/v1.1/division/${selectedDivision}`);
+            const data = await response.json();
+            const selectedDistrictData = data.data.find(d => d.district === selectedValue);
+            setUpazillas(selectedDistrictData.upazilla);
+        } catch (error) {
+            console.error('Error fetching upazilla data:', error);
+        }
     };
 
 
-    console.log(selectedDistrict);
+
+    const handleAreaSearch = (selectedupazilla) => {
+        console.log(selectedupazilla);
+    }
 
     return (
         <div className="mt-1 pb-2 rounded-1" style={{ backgroundColor: '#E5E7EB' }}>
@@ -79,6 +91,7 @@ const MyAreaNews = () => {
                     {division?.map(d => (
                         <option key={d._id} value={d.division}>
                             {d.division}
+
                         </option>
                     ))}
                 </Form.Select>
@@ -95,9 +108,43 @@ const MyAreaNews = () => {
                         </option>
                     ))}
 
-
-
                 </Form.Select>
+
+
+                {/* <Form.Select
+                    className="my-2"
+                    aria-label="Select upazilla"
+                >
+                    <option selected>Upazilla</option>
+                    {upazillas.map((upazilla, index) => (
+                        <option key={index} value={upazilla}>
+                            {upazilla}
+                        </option>
+                    ))}
+                </Form.Select> */}
+                <Form.Select
+                    className="my-2"
+                    aria-label="Select upazilla"
+                    value={selectedupazilla}
+                    onChange={(event) => {
+                        setselectedUpazilla(event.target.value);
+                    }}
+                >
+                    <option disabled selected>উপজেলা</option>
+                    {upazillas.map((upazilla, index) => (
+                        <option key={index} value={upazilla}>
+                            {upazilla}
+                        </option>
+                    ))}
+                </Form.Select>
+
+                <button onClick={() => { handleAreaSearch(selectedupazilla)}} className="border-0 my-1 py-2 rounded-1 text-white w-100" style={{ backgroundColor: 'rgb(12 122 190)' }}>Search</button>
+
+                <div>
+
+
+
+                </div>
 
 
             </div>
