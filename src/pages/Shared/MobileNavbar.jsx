@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { Navbar, Container, } from 'react-bootstrap';
-/* TODO */
+
 import { useState } from 'react';
 const MobileNavbar = () => {
     const [show, setShow] = useState(false);
