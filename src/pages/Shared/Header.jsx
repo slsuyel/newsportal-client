@@ -1,5 +1,5 @@
 
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
@@ -33,7 +33,8 @@ const Header = () => {
 
     return (
         <>
-            <Navbar sticky="top" collapseOnSelect expand="lg"  className='border-2 border-bottom fw-bold  navbar navbar-expand-lg navbar-light pri-bg py-0 shadow-sm sticky-top' variant="light">
+
+            <Navbar sticky="top" collapseOnSelect expand="lg" className='border-2 border-bottom fw-bold  navbar navbar-expand-lg navbar-light pri-bg py-0 shadow-sm sticky-top' variant="light">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-evenly navbar-nav w-100 container">

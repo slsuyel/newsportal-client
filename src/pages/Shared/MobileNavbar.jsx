@@ -1,27 +1,26 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
 
-const TopBar = () => {
+import { Navbar, Container, } from 'react-bootstrap';
+/* TODO */
+import { useState } from 'react';
+const MobileNavbar = () => {
+    const [show, setShow] = useState(false);
+
+    const handleShow = () => setShow(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleDropdownToggle = () => {
         setIsDropdownOpen(prevState => !prevState);
     };
     return (
-        <div className="mx-auto pri-bg text-white py-1 ">
-            <div className="mb-1 container d-flex justify-content-between align-items-center">
-                <div className="d-flex flex-wrap gap-3">
-                    <p className="mb-0"><i className="fas fa-location-dot"></i> ঢাকা</p>
-                    <p className="mb-0"><i className="far fa-calendar"></i> শুক্রবার, ১৮ আগস্ট, ২০২৩</p>
-                </div>
+        <Navbar sticky="top" expand="lg" className="bg-body-tertiary mx-2">
+            <Container fluid>
+                <Navbar.Toggle onClick={handleShow} aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                </Navbar.Collapse>
+                <Navbar.Brand href="#">  <img className=" img-fluid " src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" width={'150px'} /></Navbar.Brand>
+
                 <div className="d-flex flex-wrap gap-3 align-items-center">
-                    <div className="text-nowrap">
-                        <select className="form-select py-0 bg-2nd">
-                            <option value="" disabled defaultValue>Select a language</option>
-                            <option value="en">English</option>
-                            <option value="bn">Bangla</option>
-                            <option value="fr">French</option>
-                        </select>
-                    </div>
 
                     <div className={`dropdown ${isDropdownOpen ? 'show' : ''}`}>
                         <button
@@ -45,9 +44,11 @@ const TopBar = () => {
                         <i className="fas fa-moon"></i>
                     </button>
                 </div>
-            </div>
-        </div>
+
+
+            </Container>
+        </Navbar>
     );
 };
 
-export default TopBar;
+export default MobileNavbar;
