@@ -17,7 +17,7 @@ const TopMenu = ({ title, Sidebar }) => {
             <div className='row mx-auto w-100 my-5'>
                 <div className="col-md-6">
                     <div>
-                        <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/19/file_1692427632.jpg" alt="" className='img-fluid rounded ms-2' />
+                        <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/22/file_1692688270.jpg" alt="" className='img-fluid rounded ms-2' />
 
                         <div className='lh-base ms-2 mt-3 text-start'>
 
@@ -25,9 +25,9 @@ const TopMenu = ({ title, Sidebar }) => {
 
                             <p className="my-2 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
                             <Link to={`/news`} className="text-decoration-none text-dark ">
-                                <h6 className="fs-4 lh-base onhover">'জনগণের অধিকার রক্ষায় দেশের মানুষ জেগে উঠেছে'</h6>
+                                <h6 className="fs-4 lh-base onhover">'ব্রিকস সম্মেলনে যোগ দিতে ঢাকা ছেড়েছেন প্রধানমন্ত্রী'</h6>
                             </Link>
-                            <p className='lh-base  text-secondary'>নিজস্ব প্রতিবেদক: বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন, দেশে কোনো মৌলবাদী দল কখনো ক্ষমতায় . . . .</p>
+                            <p className='lh-base  text-secondary'> প্রধানমন্ত্রী শেখ হাসিনা দক্ষিণ আফ্রিকার প্রেসিডেন্ট সিরিল রামাফোসার আমন্ত্রণে ২২ থেকে ২৫ আগস্ট অনুষ্ঠেয়  . . . .</p>
                         </div>
                     </div>
 

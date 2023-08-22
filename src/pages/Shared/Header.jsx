@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
 import DarkMode from '../../components/DarkMode';
+import DynamicDate from '../../components/DynamicDate';
 
 const menuItems = [
     'সর্বশেষ',
@@ -41,7 +42,7 @@ const Header = () => {
         <>
 
             <div className="d-md-none py-3 text-white" style={{ backgroundColor: '#6B7280' }}>
-                <p className='mb-0 ms-3'>শুক্রবার, ১৮ আগস্ট, ২০২৩</p>
+                <p className='mb-0 ms-3'><DynamicDate /></p>
             </div>
 
 
@@ -106,7 +107,7 @@ const Header = () => {
 
             </Navbar>
 
-            <Offcanvas show={show} onHide={handleClose} placement='end'>
+            <Offcanvas show={show} className='w-75' onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 
                     <Link to='/' className='text-center'>

@@ -63,6 +63,7 @@ const MyAreaNews = () => {
 
     const handleAreaSearch = (selectedupazilla) => {
         console.log(selectedupazilla);
+        alert(selectedupazilla)
     }
 
     return (
@@ -137,7 +138,7 @@ const MyAreaNews = () => {
                     ))}
                 </Form.Select>
 
-                <button onClick={() => { handleAreaSearch(selectedupazilla)}} className="border-0 my-1 py-2 rounded-1 text-white w-100" style={{ backgroundColor: 'rgb(12 122 190)' }}>Search</button>
+                <button onClick={() => { handleAreaSearch(selectedupazilla) }} className="border-0 my-1 py-2 rounded-1 text-white w-100" style={{ backgroundColor: 'rgb(12 122 190)' }}>Search</button>
 
                 <div>
 

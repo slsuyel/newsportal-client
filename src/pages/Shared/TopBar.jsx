@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DarkMode from "../../components/DarkMode";
+import DynamicDate from "../../components/DynamicDate";
 
 const TopBar = () => {
 
@@ -16,7 +17,7 @@ const TopBar = () => {
             <div className="mb-1 container d-flex justify-content-between align-items-center">
                 <div className="d-flex flex-wrap gap-3">
                     <p className="mb-0"><i className="fas fa-location-dot"></i> ঢাকা</p>
-                    <p className="mb-0"><i className="far fa-calendar"></i> শুক্রবার, ১৮ আগস্ট, ২০২৩</p>
+                    <DynamicDate />
                 </div>
                 <div className="d-flex flex-wrap gap-3 align-items-center">
                     <div className="text-nowrap">

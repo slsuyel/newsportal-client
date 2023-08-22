@@ -131,7 +131,7 @@ code {
 }
 
 .title-text {
-  bottom: 30px;
+  bottom: 45px;
   left: 39px;
 }
 
@@ -178,4 +178,10 @@ body.dark-mode {
 
 .link-hover:hover {
   background: red;
+}
+
+@media (max-width: 768px) {
+  .title-text {
+    bottom: 6px;
+  }
 }
