@@ -47,34 +47,34 @@ const Sidebar1 = () => {
 
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                 
@@ -95,35 +95,35 @@ const Sidebar1 = () => {
 
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 
                                  
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled  px-2 onhover '>
 
-                                        <Link className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
+                                        <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 

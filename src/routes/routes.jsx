@@ -4,6 +4,7 @@ import WithNavbar from "../layouts/WithNavbar";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../Home/Home";
 import Categories from "../pages/Categories/Categories";
+import News from "../pages/News/News";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -15,7 +16,11 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/latest-news",
+                path: "/news",
+                element: <News />,
+            },
+            {
+                path: "/category/:category",
                 element: <Categories />,
             },
 

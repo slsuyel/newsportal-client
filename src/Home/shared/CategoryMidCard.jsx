@@ -15,7 +15,7 @@ const CategoryMidCard = ({ title, Sidebar }) => {
                     </div>
 
                 <div>
-                    <Link className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
+                    <Link to={`/news`} className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@ const CategoryMidCard = ({ title, Sidebar }) => {
                             <span className="bg-white my-2 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
 
                             <p className="my-2 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                            <Link className="text-decoration-none text-dark ">
+                            <Link to={`/news`} className="text-decoration-none text-dark ">
                                 <h6 className="fs-4 lh-base ">'জনগণের অধিকার রক্ষায় দেশের মানুষ জেগে উঠেছে'</h6>
                             </Link>
                             <p className='lh-base mb-2 text-secondary'>নিজস্ব প্রতিবেদক: বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন, দেশে কোনো মৌলবাদী দল কখনো ক্ষমতায় ওয়ামী লীগের সভাপতিমণ্ডলীর সদস্য ও রাজশাহী সিটি কর্পোরেশনের পুনরায় নির্বাচিত মেয়র এএইচএম খায়রুজ্জামান লিটন বলেছেন, খন্দকার মোস্তাককে সামনে রেখে জিয়াউর রহমান নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে ওয়ামী লীগের সভাপতিমণ্ডলীর সদস্য ও রাজশাহী সিটি কর্পোরেশনের পুনরায় নির্বাচিত মেয়র এএইচএম খায়রুজ্জামান লিটন বলেছেন, খন্দকার মোস্তাককে সামনে রেখে জিয়াউর রহমান নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে . . . .</p>

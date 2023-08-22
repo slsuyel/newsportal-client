@@ -8,7 +8,7 @@ const NewsMidCard = () => {
             <div className="mt-2">
                 <span className="text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> 8 ঘন্টা আগে</span>
                 <p className="mb-0 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                <Link className="text-decoration-none text-dark ">
+                <Link to={`/news`} className="text-decoration-none text-dark ">
                     <h6 className="fw-normal lh-base mb-2">করোনাভাইরাসের নতুন ও উচ্চ  শনাক্ত ধরন শনাক্ত</h6>
                 </Link>
                 <p style={{ fontSize: '12px' }} className="mb-1 opacity-75">ফরিদপুর প্রতিনিধি: ফরিদপুরে জাতীয়তাবাদী স্বেচ্ছাসেবক দলের ৪৩ তম প্রতিষ্ঠা বার্ষিকী উপলক্ষে বর্ণাঢ্য শোভাযাত্রা ও সমাবেশ অনুষ্ঠি . . .</p>

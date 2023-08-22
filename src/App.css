@@ -1,8 +1,8 @@
 body {
   font-family: 'AdorshoLipi', sans-serif !important;
-  /* max-width: 1200px;
-  margin: 0 auto; */
-  /* overflow-x: hidden; */
+  max-width: 1400px;
+  margin: 0 auto !important;
+  overflow-x: hidden;
 }
 
 .dropdown-toggle::after {
@@ -31,7 +31,7 @@ code {
 }
 
 .pri-bg {
-  background-color: #BE202E;
+  background-color: #BE202E !important;
 }
 
 .bg-2nd {
@@ -156,8 +156,6 @@ code {
 
 /* DARK */
 
-/* Regular styles */
-/* Regular styles */
 body {
   background-color: white;
   color: black;
@@ -172,4 +170,12 @@ body.dark-mode {
 .newscard.dark-mode {
   background-color: #444;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.234) !important;
+}
+
+.link-hover {
+  color: white !important;
+}
+
+.link-hover:hover {
+  background: red;
 }

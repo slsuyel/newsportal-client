@@ -11,7 +11,7 @@ const NewsCard = () => {
 
             <div>
                 <p className="mb-0 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                <Link className="text-decoration-none text-dark ">
+                <Link to={`/news`} className="text-decoration-none text-dark ">
                     <h6 className="fw-normal lh-base mb-3">করোনাভাইরাসের নতুন ও উচ্চ সংক্রমণশীল ধরন শনাক্ত</h6>
                 </Link>
 

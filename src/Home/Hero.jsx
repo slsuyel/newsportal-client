@@ -12,7 +12,7 @@ const Hero = () => {
 
                 <div className="position-absolute title-text">
                     <span className="light-moods px-2 py-1 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
-                    <Link className="text-decoration-none text-white ">  <h4 className="mt-3">ভোটগ্রহণ কর্মকর্তাদের নিয়োগ নীতিমালা নিয়ে বসছে ইসি</h4></Link>
+                    <Link to={`/news`} className="text-decoration-none text-white ">  <h4 className="mt-3">ভোটগ্রহণ কর্মকর্তাদের নিয়োগ নীতিমালা নিয়ে বসছে ইসি</h4></Link>
                 </div>
             </div>
 

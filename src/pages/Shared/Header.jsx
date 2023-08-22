@@ -90,11 +90,12 @@ const Header = () => {
 
             {/* d-none d-md-block d-xl-none */}
             <Navbar sticky="top" collapseOnSelect expand="lg" className='d-none d-sm-none d-md-block border-2 border-bottom fw-bold  navbar navbar-expand-lg  pri-bg py-0 shadow-sm '>
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-evenly navbar-nav w-100 container">
                         {menuItems.map((item, index) => (
-                            <NavLink key={index} to={`/menu/${encodeURIComponent(item)}`} className="nav-link text-white fw-normal">{item}</NavLink>
+                            <NavLink  key={index} to={`/category/${encodeURIComponent(item)}`} className="link-hover nav-link fw-normal">{item}</NavLink>
                         ))}
 
                     </Nav>
@@ -104,7 +105,7 @@ const Header = () => {
                 </Navbar.Collapse>
 
             </Navbar>
-            
+
             <Offcanvas show={show} onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 

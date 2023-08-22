@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import NewsCard from "../NewsCard";
 import { Link } from 'react-router-dom';
-const TopMenu = ({ title,  Sidebar }) => {
+const TopMenu = ({ title, Sidebar }) => {
     return (
         <div className="mx-4">
             <div className='align-items-end border-2 border-bottom border-secondary-subtle d-flex justify-content-between mt-2 pb-3'>
@@ -10,7 +10,7 @@ const TopMenu = ({ title,  Sidebar }) => {
                 <div className="circle-with-text mt-3" style={{ borderBottom: '2px solid red', marginBottom: '-18px', marginLeft: '-12px' }}><div className="red-circle" /><h2 className=" fw-bold mb-0 opacity-75 pb-2 text-primary">{title}</h2></div>
 
                 <div>
-                    <Link className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
+                    <Link to={`/news`} className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@ const TopMenu = ({ title,  Sidebar }) => {
                             <span className="bg-white my-2 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
 
                             <p className="my-2 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                            <Link className="text-decoration-none text-dark ">
+                            <Link to={`/news`} className="text-decoration-none text-dark ">
                                 <h6 className="fs-4 lh-base onhover">'জনগণের অধিকার রক্ষায় দেশের মানুষ জেগে উঠেছে'</h6>
                             </Link>
                             <p className='lh-base  text-secondary'>নিজস্ব প্রতিবেদক: বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন, দেশে কোনো মৌলবাদী দল কখনো ক্ষমতায় . . . .</p>
