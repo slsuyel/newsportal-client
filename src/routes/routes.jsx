@@ -5,6 +5,7 @@ import ErrorPage from "../components/ErrorPage";
 import Home from "../Home/Home";
 import Categories from "../pages/Categories/Categories";
 import News from "../pages/News/News";
+import SkeletonLoader from "../components/utilities/SkeletonLoader";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: "/news",
                 element: <News />,
+            },
+            {
+                path: "/loader",
+                element: <SkeletonLoader />,
             },
             {
                 path: "/category/:category",

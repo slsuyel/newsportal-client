@@ -107,7 +107,7 @@ const Header = () => {
 
             </Navbar>
 
-            <Offcanvas show={show} className='w-75' onHide={handleClose} placement='end'>
+            <Offcanvas show={show} className='col-sm-7' onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 
                     <Link to='/' className='text-center'>
