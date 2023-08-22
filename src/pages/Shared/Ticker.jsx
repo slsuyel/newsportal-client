@@ -31,7 +31,7 @@ const Ticker = () => {
                         >
                             {
                                 fakeBlogs.map(blog => (
-                                    <Link key={blog._id} to='/blog' className='text-decoration-none  onhover'>
+                                    <Link key={blog._id} to='/news' className='text-decoration-none  onhover'>
                                         {blog?.title} 🔴
                                     </Link>
                                 ))

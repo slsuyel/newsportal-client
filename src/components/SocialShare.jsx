@@ -1,7 +1,33 @@
 
 const SocialShare = () => {
+    const shareText = 'shareText'
+    const shareUrl = 'shareUrl'
+    const shareOnFacebook = () => {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        window.open(facebookUrl, '_blank');
+    };
+
+    const shareOnTwitter = () => {
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        window.open(twitterUrl, '_blank');
+    };
+
+    const shareOnLinkedIn = () => {
+        const linkedinUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(shareUrl)}`;
+        window.open(linkedinUrl, '_blank');
+    };
+
+    const shareOnWhatsApp = () => {
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
+    const printPage = () => {
+        window.print();
+    };
+
     return (
-        <div className="space-x-2 flex justify-center items-center print:hidden mt-2 md:mt-0">
+        <div className="d-flex flex-wrap gap-1">
             <button
                 aria-label="facebook"
                 className="react-share__ShareButton Demo__some-network__share-button"
@@ -13,31 +39,12 @@ const SocialShare = () => {
                     color: "inherit",
                     cursor: "pointer"
                 }}
+                onClick={shareOnFacebook}
             >
                 <svg viewBox="0 0 64 64" width={32} height={32}>
                     <circle cx={32} cy={32} r={31} fill="#3b5998" />
                     <path
                         d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"
-                        fill="white"
-                    />
-                </svg>
-            </button>
-            <button
-                aria-label="facebookmessenger"
-                className="react-share__ShareButton Demo__some-network__share-button"
-                style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    padding: 0,
-                    font: "inherit",
-                    color: "inherit",
-                    cursor: "pointer"
-                }}
-            >
-                <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#2196F3" />
-                    <path
-                        d="M 53.066406 21.871094 C 52.667969 21.339844 51.941406 21.179688 51.359375 21.496094 L 37.492188 29.058594 L 28.867188 21.660156 C 28.339844 21.207031 27.550781 21.238281 27.054688 21.730469 L 11.058594 37.726562 C 10.539062 38.25 10.542969 39.09375 11.0625 39.613281 C 11.480469 40.027344 12.121094 40.121094 12.640625 39.839844 L 26.503906 32.28125 L 35.136719 39.679688 C 35.667969 40.132812 36.457031 40.101562 36.949219 39.609375 L 52.949219 23.613281 C 53.414062 23.140625 53.464844 22.398438 53.066406 21.871094 Z M 53.066406 21.871094"
                         fill="white"
                     />
                 </svg>
@@ -53,11 +60,12 @@ const SocialShare = () => {
                     color: "inherit",
                     cursor: "pointer"
                 }}
+                onClick={shareOnTwitter}
             >
                 <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#00aced" />
+                    <circle cx={32} cy={32} r={31} fill="#2196F3" />
                     <path
-                        d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
+                        d="M 53.066406 21.871094 C 52.667969 21.339844 51.941406 21.179688 51.359375 21.496094 L 37.492188 29.058594 L 28.867188 21.660156 C 28.339844 21.207031 27.550781 21.238281 27.054688 21.730469 L 11.058594 37.726562 C 10.539062 38.25 10.542969 39.09375 11.0625 39.613281 C 11.480469 40.027344 12.121094 40.121094 12.640625 39.839844 L 26.503906 32.28125 L 35.136719 39.679688 C 35.667969 40.132812 36.457031 40.101562 36.949219 39.609375 L 52.949219 23.613281 C 53.414062 23.140625 53.464844 22.398438 53.066406 21.871094 Z M 53.066406 21.871094"
                         fill="white"
                     />
                 </svg>
@@ -73,38 +81,19 @@ const SocialShare = () => {
                     color: "inherit",
                     cursor: "pointer"
                 }}
+                onClick={shareOnLinkedIn}
             >
                 <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#007fb1" />
+                    <circle cx={32} cy={32} r={31} fill="#00aced" />
                     <path
-                        d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z"
-                        fill="white"
-                    />
-                </svg>
-            </button>
-            <button
-                aria-label="email"
-                className="react-share__ShareButton Demo__some-network__share-button"
-                style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    padding: 0,
-                    font: "inherit",
-                    color: "inherit",
-                    cursor: "pointer"
-                }}
-            >
-                <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#7f7f7f" />
-                    <path
-                        d="M17,22v20h30V22H17z M41.1,25L32,32.1L22.9,25H41.1z M20,39V26.6l12,9.3l12-9.3V39H20z"
+                        d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
                         fill="white"
                     />
                 </svg>
             </button>
             <button
                 aria-label="whatsapp"
-                className="react-share__ShareButton Demo__some-network__share-button"
+                className=""
                 style={{
                     backgroundColor: "transparent",
                     border: "none",
@@ -113,6 +102,7 @@ const SocialShare = () => {
                     color: "inherit",
                     cursor: "pointer"
                 }}
+                onClick={shareOnWhatsApp}
             >
                 <svg viewBox="0 0 64 64" width={32} height={32}>
                     <circle cx={32} cy={32} r={31} fill="#25D366" />
@@ -122,7 +112,7 @@ const SocialShare = () => {
                     />
                 </svg>
             </button>
-            <button className="cursor-pointer w-[32px] h-[32px] rounded-full bg-gray-800 flxc text-white ">
+            <button onClick={printPage} className="bg-warning border-0 px-2 py-1 rounded-circle text-dark">
                 <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -135,21 +125,8 @@ const SocialShare = () => {
                     <path d="M732 120c0-4.4-3.6-8-8-8H300c-4.4 0-8 3.6-8 8v148h440V120zm120 212H172c-44.2 0-80 35.8-80 80v328c0 17.7 14.3 32 32 32h168v132c0 4.4 3.6 8 8 8h424c4.4 0 8-3.6 8-8V772h168c17.7 0 32-14.3 32-32V412c0-44.2-35.8-80-80-80zM664 844H360V568h304v276zm164-360c0 4.4-3.6 8-8 8h-40c-4.4 0-8-3.6-8-8v-40c0-4.4 3.6-8 8-8h40c4.4 0 8 3.6 8 8v40z" />
                 </svg>
             </button>
-            <span className="inline-flex justify-center items-center bg-logo2 text-white cursor-pointer w-8 h-8 rounded-full">
-                <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth={0}
-                    viewBox="0 0 512 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z" />
-                </svg>
-            </span>
-        </div>
 
+        </div>
     );
 };
 

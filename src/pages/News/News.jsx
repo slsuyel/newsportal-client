@@ -1,5 +1,6 @@
 import NewsCard from "../../Home/NewsCard";
 import NewsMidCard from "../../Home/NewsMidCard";
+import RelatedNews from "../../Home/shared/RelatedNews";
 import Sidebar1 from "../../Home/sidebars/Sidebar1";
 import SocialShare from "../../components/SocialShare";
 
@@ -49,6 +50,10 @@ const News = () => {
                     <NewsMidCard />
                 </div>
 
+            </div>
+
+            <div className="col-12">
+                <RelatedNews />
             </div>
 
         </div>

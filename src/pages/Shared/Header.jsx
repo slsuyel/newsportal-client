@@ -1,6 +1,6 @@
 
 import { Navbar, Nav, } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
 import DarkMode from '../../components/DarkMode';
@@ -54,7 +54,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <img className=" img-fluid " src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" width={'150px'} />
+                    <Link to='/'>  <img className=" img-fluid " src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" width={'150px'} /></Link>
                 </div>
 
                 <div className='align-items-center d-flex gap-2'>
@@ -95,7 +95,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-evenly navbar-nav w-100 container">
                         {menuItems.map((item, index) => (
-                            <NavLink  key={index} to={`/category/${encodeURIComponent(item)}`} className="link-hover nav-link fw-normal">{item}</NavLink>
+                            <NavLink key={index} to={`/category/${encodeURIComponent(item)}`} className="link-hover nav-link fw-normal">{item}</NavLink>
                         ))}
 
                     </Nav>
@@ -109,13 +109,16 @@ const Header = () => {
             <Offcanvas show={show} onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 
-                    <img className="col-8 img-fluid mx-auto px-2" src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" />
+                    <Link to='/' className='text-center'>
+                        <img className="col-8 img-fluid mx-auto px-2" src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" />
+                    </Link>
+
 
 
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     {menuItems.map((item, index) => (
-                        <NavLink key={index} to={`/menu/${index + 1}`} className="border-bottom border-danger fw-normal mb-2 pb-2 nav-link">{item}</NavLink>
+                        <NavLink key={index} to={`/category/${encodeURIComponent(item)}`} className="border-bottom border-danger fw-normal mb-2 pb-2 nav-link">{item}</NavLink>
                     ))}
                 </Offcanvas.Body>
             </Offcanvas>
