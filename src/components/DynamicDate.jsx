@@ -1,31 +1,41 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
-
-const convertToBengaliNumber = (number) => {
-    const bengaliNumbers = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    return String(number).replace(/\d/g, digit => bengaliNumbers[digit]);
-};
+import { useEffect, useState } from 'react';
 
 const DynamicDate = () => {
-    // Get the current date
-    const currentDate = new Date();
+    const [date, setDate] = useState(new Date());
 
-    // Define days of the week and months
-    const daysOfWeek = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
-    const months = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+    useEffect(() => {
+        const timer = setInterval(() => setDate(new Date()), 1000);
+        return () => clearInterval(timer);
+    }, []);
 
-    // Extract day, month, and year
-    const dayOfWeek = daysOfWeek[currentDate.getDay()];
-    const day = convertToBengaliNumber(currentDate.getDate());
-    const month = months[currentDate.getMonth()];
-    const year = convertToBengaliNumber(currentDate.getFullYear());
 
-    // Create the formatted date string
-    const formattedDate = `${day} ${month}, ${year}`;
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        era: 'short',
+        timeZone: 'Asia/Dhaka',
+        calendar: 'beng',
+    };
+    const formattedDate = date.toLocaleDateString('bn-BD', options);
+
+    const timeOptions = {
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'Asia/Dhaka',
+    };
+    const formattedTime = date.toLocaleTimeString('bn-BD', timeOptions);
 
     return (
-        <>{formattedDate}</>
-        // <p className="mb-0"><i className="far fa-calendar"></i> {formattedDate}</p>
+        <div className='container-fluid d-flex flex-wrap gap-1'>
+            <span><i className="fas mx-1 fa-location-dot"></i> ঢাকা |</span>
+            <span><i className=" fa mx-1 fa-calendar"></i>{formattedDate} |</span>
+            <span> <i className=" fas mx-1 fa-clock"></i>
+                {formattedTime}</span>
+        </div>
     );
 };
 

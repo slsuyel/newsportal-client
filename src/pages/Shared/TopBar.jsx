@@ -15,8 +15,7 @@ const TopBar = () => {
     return (
         <div className="mx-auto pri-bg text-white py-1 d-none d-sm-none d-md-block">
             <div className="mb-1 container d-flex justify-content-between align-items-center">
-                <div className="d-flex flex-wrap gap-3">
-                    <p className="mb-0"><i className="fas fa-location-dot"></i> ঢাকা</p>
+                <div>
                     <DynamicDate />
                 </div>
                 <div className="d-flex flex-wrap gap-3 align-items-center">

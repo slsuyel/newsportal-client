@@ -41,8 +41,8 @@ const Header = () => {
     return (
         <>
 
-            <div className="d-md-none py-3 text-white" style={{ backgroundColor: '#6B7280' }}>
-                <p className='mb-0 ms-3'><DynamicDate /></p>
+            <div className="d-md-none py-2 text-white" style={{ backgroundColor: '#6B7280' }}>
+               <DynamicDate />
             </div>
 
 
@@ -107,7 +107,7 @@ const Header = () => {
 
             </Navbar>
 
-            <Offcanvas show={show} className='col-sm-7' onHide={handleClose} placement='end'>
+            <Offcanvas show={show} className='canvas' onHide={handleClose} placement='end'>
                 <Offcanvas.Header closeButton>
 
                     <Link to='/' className='text-center'>

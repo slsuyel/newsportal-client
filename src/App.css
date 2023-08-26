@@ -184,4 +184,8 @@ body.dark-mode {
   .title-text {
     bottom: 6px;
   }
+
+  .canvas {
+    width: 61% !important;
+  }
 }

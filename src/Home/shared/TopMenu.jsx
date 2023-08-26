@@ -59,7 +59,6 @@ const TopMenu = ({ title, Sidebar }) => {
                 </div>
             </div>
 
-
         </div>
     );
 };
