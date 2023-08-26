@@ -11,7 +11,6 @@ const menuItems = [
     'জাতীয়',
     'রাজনীতি',
     'বাংলাদেশ',
-    'প্রিয় চট্টগ্রাম',
     'সারাবিশ্ব',
     'খেলা',
     'বিনোদন',
@@ -42,7 +41,7 @@ const Header = () => {
         <>
 
             <div className="d-md-none py-2 text-white" style={{ backgroundColor: '#6B7280' }}>
-               <DynamicDate />
+                <DynamicDate />
             </div>
 
 

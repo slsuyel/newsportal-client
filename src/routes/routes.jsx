@@ -6,6 +6,9 @@ import Home from "../Home/Home";
 import Categories from "../pages/Categories/Categories";
 import News from "../pages/News/News";
 import SkeletonLoader from "../components/utilities/SkeletonLoader";
+import DashHome from "../dashboards/Dash-Home/DashHome";
+import AddBlog from "../dashboards/Blog/AddBlog";
+import Blogs from "../dashboards/Blog/Blogs";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -38,7 +41,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <div>Home  2</div>
+                element: <DashHome />
+            },
+            {
+                path: 'add/news',
+                element: <AddBlog />
+            },
+            {
+                path: 'news',
+                element: <Blogs />
             },
 
         ]

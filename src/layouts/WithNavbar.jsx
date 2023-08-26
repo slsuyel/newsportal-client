@@ -1,8 +1,9 @@
 
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+
+import Sidebar from "../dashboards/Sidebar";
+import Footer from "../dashboards/Footer";
+import Navbar from "../dashboards/Navbar";
 
 export default function WithNavbar() {
   return (
