@@ -1,13 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import NewsCard from "../NewsCard";
+
 import { Link } from 'react-router-dom';
-const TopMenu = ({ title, Sidebar }) => {
+import TopMenuCard4 from "../TopMenuCard4";
+import TopMenuCard6 from "../topMenu/TopMenuCard6";
+import SkeletonLoader from '../../components/utilities/SkeletonLoader';
+const TopMenu = ({ header, Sidebar, isLoading, newsData }) => {
+
+    if (isLoading) {
+        return <SkeletonLoader />
+    }
     return (
         <div className="mx-4">
             <div className='align-items-end border-2 border-bottom border-secondary-subtle d-flex justify-content-between mt-2 pb-3'>
 
-                <div className="circle-with-text mt-3" style={{ borderBottom: '2px solid red', marginBottom: '-18px', marginLeft: '-12px' }}><div className="red-circle" /><h2 className=" fw-bold mb-0 opacity-75 pb-2 text-primary">{title}</h2></div>
+                <div className="circle-with-text mt-3" style={{ borderBottom: '2px solid red', marginBottom: '-18px', marginLeft: '-12px' }}><div className="red-circle" /><h2 className=" fw-bold mb-0 opacity-75 pb-2 text-primary">{header}</h2></div>
 
                 <div>
                     <Link to={`/news`} className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
@@ -17,37 +24,41 @@ const TopMenu = ({ title, Sidebar }) => {
             <div className='row mx-auto w-100 my-5'>
                 <div className="col-md-6">
                     <div>
-                        <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/22/file_1692688270.jpg" alt="" className='img-fluid rounded ms-2' />
+                        <img src={newsData?.[0].banner} alt="" className='img-fluid rounded ms-2 w-100' style={{ maxHeight: '300px', }} />
 
                         <div className='lh-base ms-2 mt-3 text-start'>
 
                             <span className="bg-white my-2 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
 
-                            <p className="my-2 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                            <Link to={`/news`} className="text-decoration-none text-dark ">
-                                <h6 className="fs-4 lh-base onhover">'ব্রিকস সম্মেলনে যোগ দিতে ঢাকা ছেড়েছেন প্রধানমন্ত্রী'</h6>
+                            <p className="mb-0 category-tittle my-2">
+                                {newsData?.[0].selectedCategoryValues && newsData?.[0].selectedCategoryValues.length > 0
+                                    ? newsData?.[0].selectedCategoryValues.map((item, index) => (
+                                        <span key={index}>
+                                            সর্বশেষ ,
+                                            {item}
+                                            {index !== newsData?.[0].selectedCategoryValues.length - 1 ? ',' : ''}
+                                        </span>
+                                    ))
+                                    : null}
+                            </p>
+                            <Link to={`/news/${newsData?.[0]._id}`} className="text-decoration-none text-dark ">
+                                <h6 className="fs-4 lh-base onhover">{newsData?.[0].title}</h6>
                             </Link>
-                            <p className='lh-base  text-secondary'> প্রধানমন্ত্রী শেখ হাসিনা দক্ষিণ আফ্রিকার প্রেসিডেন্ট সিরিল রামাফোসার আমন্ত্রণে ২২ থেকে ২৫ আগস্ট অনুষ্ঠেয়  . . . .</p>
+
+                            <div className='lh-base text-secondary'
+                                dangerouslySetInnerHTML={{
+                                    __html: `<p >${newsData?.[0].content.slice(0, 200)} . . . .</p>`
+                                }}
+                            />
+
                         </div>
                     </div>
 
-                    <div className='row'>
-                        <div className="col-md-6"> <NewsCard />
-                            <NewsCard /></div>
-                        <div className="col-md-6"> <NewsCard />
-                            <NewsCard /></div>
-
-                    </div>
+                    <TopMenuCard4 allNews={newsData} />
                 </div>
 
                 <div className='col-md-3'>
-                    <NewsCard />
-                    <NewsCard />
-                    <NewsCard />
-                    <NewsCard />
-                    <NewsCard />
-                    <NewsCard />
-
+                    <TopMenuCard6 allNews={newsData} />
                 </div>
 
                 <div className='col-md-3'>

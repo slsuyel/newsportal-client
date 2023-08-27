@@ -1,15 +1,13 @@
 /* eslint-disable react/no-unknown-property */
 
 import { Link } from 'react-router-dom';
+import useLatestNews from '../../hooks/useLatestNews';
 
 const Ticker = () => {
-    // Define some fake blog data
-    const fakeBlogs = [
-        { _id: 1, title: 'বাংলাদেশের প্রতি যুক্তরাষ্ট্রের অসম আচরণের কারণ কী' },
-        { _id: 2, title: 'বাংলাদেশের চরণের কারণ কীe Blog 1  Blog 2' },
-        { _id: 3, title: 'বাংলাদেশের প্রতি যুক্তরাষ্ট্রের অসম আপ্রতি যুক্তরাষ্ট্রের অসম আ Fake Blog 3' },
 
-    ];
+    const { newsData,  } = useLatestNews();
+
+
 
     return (
         <div className="light-moods-ticker container-fluid my-3">
@@ -30,9 +28,13 @@ const Ticker = () => {
                             direction="left"
                         >
                             {
-                                fakeBlogs.map(blog => (
+                                newsData?.map(blog => (
                                     <Link key={blog._id} to='/news' className='text-decoration-none  onhover'>
-                                        {blog?.title} 🔴
+                                        {blog?.title}
+                                         <svg className='mx-2 mb-1' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                            <circle cx="10" cy="10" r="9" fill="red" />
+                                        </svg>
+
                                     </Link>
                                 ))
                             }

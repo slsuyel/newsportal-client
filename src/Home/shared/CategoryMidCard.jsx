@@ -3,16 +3,23 @@
 
 import { Link } from "react-router-dom";
 import NewsMidCard from "../NewsMidCard";
+import SkeletonLoader from "../../components/utilities/SkeletonLoader";
 
-const CategoryMidCard = ({ title, Sidebar }) => {
+const CategoryMidCard = ({ header, Sidebar, isLoading, category }) => {
+
+    if (isLoading) {
+        return <SkeletonLoader />
+    }
+
+    console.log(category);
     return (
         <div className="mx-4">
             <div className='align-items-end border-2 border-bottom border-secondary-subtle d-flex justify-content-between mt-2 pb-3'>
 
                 <div className="circle-with-text mt-3" style={{ borderBottom: '2px solid red', marginBottom: '-18px', marginLeft: '-12px' }}>
                     <div className="red-circle" />
-                    <h2 className=" fw-bold mb-0 opacity-75 pb-2 text-primary">{title}</h2>
-                    </div>
+                    <h2 className=" fw-bold mb-0 opacity-75 pb-2 text-primary">{header}</h2>
+                </div>
 
                 <div>
                     <Link to={`/news`} className='onhover text-decoration-none'>আরও দেখুন <i className="fa-solid fa-arrow-right-long"></i></Link>
@@ -20,12 +27,10 @@ const CategoryMidCard = ({ title, Sidebar }) => {
             </div>
 
             <div className='row mx-auto w-100 my-5'>
-                <div className='col-md-3'>
-                    <NewsMidCard />
-                    <NewsMidCard />
-                    <NewsMidCard />
-                    <NewsMidCard />
 
+                <div className='col-md-3'>
+                    <NewsMidCard category={category[7]} />
+                    <NewsMidCard category={category[2]} />
                 </div>
 
                 <div className="col-md-6">
@@ -34,23 +39,21 @@ const CategoryMidCard = ({ title, Sidebar }) => {
 
                         <div className='lh-base ms-2 mt-3 text-start'>
 
-                            <span className="bg-white my-2 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
+                            <span className="bg-white my-3 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
 
-                            <p className="my-2 category-tittle"> জাতীয়, প্রিয় চট্টগ্রাম </p>
-                            <Link to={`/news`} className="text-decoration-none text-dark ">
-                                <h6 className="fs-4 lh-base ">'জনগণের অধিকার রক্ষায় দেশের মানুষ জেগে উঠেছে'</h6>
+                            <Link to={`/news/${category[0]?._id}`} className="text-decoration-none text-dark ">
+                                <h6 className="fs-4 lh-base">{category[0]?.title.slice(0, 80)}</h6>
                             </Link>
-                            <p className='lh-base mb-2 text-secondary'>নিজস্ব প্রতিবেদক: বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন, দেশে কোনো মৌলবাদী দল কখনো ক্ষমতায় ওয়ামী লীগের সভাপতিমণ্ডলীর সদস্য ও রাজশাহী সিটি কর্পোরেশনের পুনরায় নির্বাচিত মেয়র এএইচএম খায়রুজ্জামান লিটন বলেছেন, খন্দকার মোস্তাককে সামনে রেখে জিয়াউর রহমান নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে ওয়ামী লীগের সভাপতিমণ্ডলীর সদস্য ও রাজশাহী সিটি কর্পোরেশনের পুনরায় নির্বাচিত মেয়র এএইচএম খায়রুজ্জামান লিটন বলেছেন, খন্দকার মোস্তাককে সামনে রেখে জিয়াউর রহমান নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে নেপথ্যে থেকে জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানকে . . . .</p>
+
+                            <div style={{ height: 307, overflow: "auto" }} className='border lh-base mb-2 p-2 rounded-1 shadow-sm text-secondary'
+                                dangerouslySetInnerHTML={{
+                                    __html: `<p>${category[0]?.content.slice(0, 700)} . . . .</p>`
+                                }}
+                            />
+
                         </div>
                     </div>
 
-                    <div className='row'>
-                        <div className="col-md-6"> <NewsMidCard />
-                            <NewsMidCard /></div>
-                        <div className="col-md-6"> <NewsMidCard />
-                            <NewsMidCard /></div>
-
-                    </div>
                 </div>
 
 
@@ -61,6 +64,20 @@ const CategoryMidCard = ({ title, Sidebar }) => {
                 </div>
             </div>
 
+            <div className='row mx-auto w-100 my-5'>
+                <div className="col-md-3">
+                    <NewsMidCard category={category[6]} />
+                </div>
+                <div className="col-md-3">
+                    <NewsMidCard category={category[3]} />
+                </div>
+                <div className="col-md-3">
+                    <NewsMidCard category={category[4]} />
+                </div>
+                <div className="col-md-3">
+                    <NewsMidCard category={category[5]} />
+                </div>
+            </div>
 
         </div>
     );

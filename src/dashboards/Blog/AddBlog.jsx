@@ -6,6 +6,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../baseurl/baseUrl';
 
 const AddBlog = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const AddBlog = () => {
             [{ 'header': '1' }, { 'font': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['bold', 'italic', 'underline'],
-            // ['link', 'image'],
+            ['link', 'image'],
             [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
             ['clean']
         ],
@@ -73,15 +74,15 @@ const AddBlog = () => {
             content,
             date: new Date()
         };
-        console.log(blogData);
-        fetch(`http://localhost:3000/news`, {
+        // console.log(blogData);
+        fetch(`${baseUrl}/news`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
             body: JSON.stringify(blogData)
         }).then(res => res.json()).then(data => {
-            console.log(blogData);
+            // console.log(blogData);
             if (data.insertedId) {
                 Swal.fire(
                     'success!',
@@ -89,7 +90,7 @@ const AddBlog = () => {
                     'success'
                 )
                 setIsSubmitting(false)
-                navigate('/dashboard');
+                // navigate('/dashboard');
             }
         })
 

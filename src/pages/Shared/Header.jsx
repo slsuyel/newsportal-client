@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
 import DarkMode from '../../components/DarkMode';
 import DynamicDate from '../../components/DynamicDate';
-
+import logo from '../../assets/image/logo.jpg'
 const menuItems = [
     'সর্বশেষ',
     'জাতীয়',
@@ -54,7 +54,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <Link to='/'>  <img className=" img-fluid " src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" width={'150px'} /></Link>
+                    <Link to='/'>  <img className=" img-fluid " src={logo} alt="" width={'150px'} /></Link>
                 </div>
 
                 <div className='align-items-center d-flex gap-2'>
@@ -110,7 +110,7 @@ const Header = () => {
                 <Offcanvas.Header closeButton>
 
                     <Link to='/' className='text-center'>
-                        <img className="col-8 img-fluid mx-auto px-2" src="https://backend.newsnow24.com/storage/photos/shares/newsnow-logo.png" alt="" />
+                        <img className="col-8 img-fluid mx-auto px-2" src={logo} alt="logo" />
                     </Link>
 
 

@@ -1,53 +1,45 @@
 import { Link } from "react-router-dom";
 import NewsCard from "./NewsCard";
+import useAllNews from "../hooks/useAllNews";
+import SkeletonLoader from "../components/utilities/SkeletonLoader";
+import NewsCard3 from "./NewsCard3";
+import HeroNewsCard from "./HeroNewsCard";
 
 const Hero = () => {
+
+    const [allNews, , isLoading] = useAllNews('news')
+
+    if (isLoading) {
+        return <SkeletonLoader />
+    }
+
+    const first = allNews[0]
+
     return (
-        <div className="row w-100 mx-auto ">
+        <div className="row w-100 mx-auto mx-4">
+
             <div className="col-md-6 position-relative">
                 <div className="img-contain">
-                    <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/18/file_1692372304.jpg" alt="Zoomable Image" />
+                    <img src={first.banner} alt="Zoomable Image" />
                     <div className="overlay"></div>
                 </div>
 
                 <div className="position-absolute title-text">
                     <span className="bg-white px-2 py-1 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
-                    <Link to={`/news`} className="text-decoration-none text-white ">  <h4 className="mt-3">ভোটগ্রহণ কর্মকর্তাদের নিয়োগ নীতিমালা নিয়ে বসছে ইসি</h4></Link>
+                    <Link to={`/news/${first._id}`} className="text-decoration-none text-white ">  <h4 className="mt-3">{first.title}</h4></Link>
                 </div>
             </div>
 
-            <div className="col-md-3 ">
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-            </div>
+            <NewsCard3 allNews={allNews} />
 
             <div className="col-md-3">
-                <div>
-                    <a href="" className="text-center">  <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className="img-fluid rounded shadow-sm" /></a>
+                <div className="w-100 mx-auto">
+                    <a href="" className="text-center">  <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className="img-fluid rounded shadow-sm " /></a>
                 </div>
                 <NewsCard />
             </div>
 
-            <div className="col-md-3 ">
-                <NewsCard />
-                <NewsCard />
-            </div>
-
-            <div className="col-md-3 ">
-                <NewsCard />
-                <NewsCard />
-            </div>
-
-            <div className="col-md-3 ">
-                <NewsCard />
-                <NewsCard />
-            </div>
-
-            <div className="col-md-3 ">
-                <NewsCard />
-                <NewsCard />
-            </div>
+            <HeroNewsCard allNews={allNews} />
 
 
         </div>

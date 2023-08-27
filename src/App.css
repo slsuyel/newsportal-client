@@ -79,6 +79,7 @@ code {
 .newscard div img {
   max-width: 110px;
   transition: transform 0.3s ease;
+  height: 66px;
 }
 
 .newscard div:hover img {
@@ -95,6 +96,7 @@ code {
 /*  */
 
 .img-contain {
+  width: 100%;
   position: relative;
   display: inline-block;
   border-radius: 10px;
@@ -102,7 +104,9 @@ code {
 }
 
 .img-contain img {
+  width: 100%;
   max-width: 100%;
+  height: 377px !important;
   height: auto;
   display: block;
   transition: transform 0.3s ease-in-out;
@@ -131,7 +135,7 @@ code {
 }
 
 .title-text {
-  bottom: 45px;
+  bottom: 25px;
   left: 39px;
 }
 
@@ -181,8 +185,13 @@ body.dark-mode {
 }
 
 @media (max-width: 768px) {
+  .img-contain img {
+    height: 250px !important;
+  }
+
   .title-text {
     bottom: 6px;
+    margin-left: -15px
   }
 
   .canvas {

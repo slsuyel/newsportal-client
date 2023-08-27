@@ -62,7 +62,7 @@ const MyAreaNews = () => {
 
 
     const handleAreaSearch = (selectedupazilla) => {
-        console.log(selectedupazilla);
+        // console.log(selectedupazilla);
         alert(selectedupazilla)
     }
 
@@ -80,63 +80,50 @@ const MyAreaNews = () => {
 
 
             <div className="mt-4 mx-2">
-                <Form.Select
-                    className="my-2"
-                    aria-label="Select Division"
-                    defaultValue={selectedDivision}
-                    onChange={handleDivisionChange}
-                >
-                    <option selected >বিভাগ</option>
+            <Form.Select
+    className="my-2"
+    aria-label="Select Division"
+    value={selectedDivision}
+    onChange={handleDivisionChange}
+>
+    <option disabled value="">বিভাগ</option>
+    {division?.map(d => (
+        <option key={d._id} value={d.division}>
+            {d.division}
+        </option>
+    ))}
+</Form.Select>
 
-                    {division?.map(d => (
-                        <option key={d._id} value={d.division}>
-                            {d.division}
+<Form.Select
+    className="my-2"
+    aria-label="Select Districts"
+    value={selectedDistrict}
+    onChange={handleDistrictChange}
+>
+    <option disabled value="">জেলা</option>
+    {!districts ? null : districts.map(d => (
+        <option key={d._id} value={d.district}>
+            {d.district}
+        </option>
+    ))}
+</Form.Select>
 
-                        </option>
-                    ))}
-                </Form.Select>
+<Form.Select
+    className="my-2"
+    aria-label="Select upazilla"
+    value={selectedupazilla}
+    onChange={(event) => {
+        setselectedUpazilla(event.target.value);
+    }}
+>
+    <option disabled value="">উপজেলা</option>
+    {upazillas.map((upazilla, index) => (
+        <option key={index} value={upazilla}>
+            {upazilla}
+        </option>
+    ))}
+</Form.Select>
 
-                <Form.Select
-                    className="my-2"
-                    aria-label="Select Districts"
-                    onChange={handleDistrictChange}
-                >
-
-                    {!districts ? <option selected disabled>জেলা</option> : districts.map(d => (
-                        <option key={d._id} value={d.district}>
-                            {d.district}
-                        </option>
-                    ))}
-
-                </Form.Select>
-
-
-                {/* <Form.Select
-                    className="my-2"
-                    aria-label="Select upazilla"
-                >
-                    <option selected>Upazilla</option>
-                    {upazillas.map((upazilla, index) => (
-                        <option key={index} value={upazilla}>
-                            {upazilla}
-                        </option>
-                    ))}
-                </Form.Select> */}
-                <Form.Select
-                    className="my-2"
-                    aria-label="Select upazilla"
-                    value={selectedupazilla}
-                    onChange={(event) => {
-                        setselectedUpazilla(event.target.value);
-                    }}
-                >
-                    <option disabled selected>উপজেলা</option>
-                    {upazillas.map((upazilla, index) => (
-                        <option key={index} value={upazilla}>
-                            {upazilla}
-                        </option>
-                    ))}
-                </Form.Select>
 
                 <button onClick={() => { handleAreaSearch(selectedupazilla) }} className="border-0 my-1 py-2 rounded-1 text-white w-100" style={{ backgroundColor: 'rgb(12 122 190)' }}>Search</button>
 
