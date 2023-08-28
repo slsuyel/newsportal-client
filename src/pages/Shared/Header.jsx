@@ -7,7 +7,7 @@ import DarkMode from '../../components/DarkMode';
 import DynamicDate from '../../components/DynamicDate';
 import logo from '../../assets/image/logo.jpg'
 const menuItems = [
-    'সর্বশেষ',
+
     'জাতীয়',
     'রাজনীতি',
     'বাংলাদেশ',
@@ -93,6 +93,11 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-evenly navbar-nav w-100 container">
+
+                        <NavLink to={`/latest`} className="link-hover nav-link fw-normal">
+                            সর্বশেষ
+                        </NavLink>
+
                         {menuItems.map((item, index) => (
                             <NavLink key={index} to={`/category/${encodeURIComponent(item)}`} className="link-hover nav-link fw-normal">{item}</NavLink>
                         ))}

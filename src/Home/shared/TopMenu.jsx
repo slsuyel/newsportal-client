@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import TopMenuCard4 from "../TopMenuCard4";
 import TopMenuCard6 from "../topMenu/TopMenuCard6";
 import SkeletonLoader from '../../components/utilities/SkeletonLoader';
+import { baseUrl } from '../../baseurl/baseUrl';
+
 const TopMenu = ({ header, Sidebar, isLoading, newsData }) => {
+
+    console.log(newsData)
 
     if (isLoading) {
         return <SkeletonLoader />
@@ -24,7 +28,7 @@ const TopMenu = ({ header, Sidebar, isLoading, newsData }) => {
             <div className='row mx-auto w-100 my-5'>
                 <div className="col-md-6">
                     <div>
-                        <img src={newsData?.[0].banner} alt="" className='img-fluid rounded ms-2 w-100' style={{ maxHeight: '300px', }} />
+                        <img src={`${baseUrl}${newsData?.[0].banner}`} alt="" className='img-fluid rounded ms-2 w-100' style={{ maxHeight: '300px', }} />
 
                         <div className='lh-base ms-2 mt-3 text-start'>
 

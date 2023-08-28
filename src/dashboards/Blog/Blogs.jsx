@@ -13,7 +13,8 @@ const Blogs = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     if (isLoading) {
-        return <SkeletonLoader />
+        return <div className='content-wrapper'>
+            <div className='content-header'><SkeletonLoader /></div></div>
     }
     const allBlogs = allNews
     const handleBlogDelete = async (id) => {

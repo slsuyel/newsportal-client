@@ -51,6 +51,13 @@ export default function Sidebar() {
                                 </Link>
                             </li>
 
+                            <li className="nav-item">
+                                <Link to="/dashboard/setting" className="nav-link">
+                                    <i className="nav-icon fa-solid fa-gear"></i>
+                                    <p className='text-white'>Setting</p>
+                                </Link>
+                            </li>
+
 
                             {/* <i class="fa-solid fa-calendar-check"></i>"></i> */}
                             <div>

@@ -4,18 +4,19 @@ import { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../baseurl/baseUrl';
 
 const AddBlog = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [title, setTitle] = useState('');
     const [upazila, setUpazila] = useState('');
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
-    const [programImage, setProgramImage] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const modules = {
         toolbar: [
@@ -52,22 +53,37 @@ const AddBlog = () => {
         setSelectedCategories(selectedOptions);
     };
 
-
     const selectedCategoryValues = selectedCategories.map(category => category.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSubmitting(true)
-        const formDataImage = new FormData();
-        formDataImage.append('image', programImage);
-        formDataImage.append('key', '51b055a0b25f5e3bfd4bac7b96599647');
-        const imgbbResponse = await fetch('https://api.imgbb.com/1/upload', {
-            method: 'POST',
-            body: formDataImage,
-        });
-        const imgbbData = await imgbbResponse.json();
+        setIsSubmitting(true);
+
+        let bannerUrl = '';
+        if (selectedImage) {
+            const formData = new FormData();
+            formData.append('image', selectedImage);
+
+            try {
+                const response = await fetch(`${baseUrl}/upload`, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data.imageUrl);
+                    bannerUrl = data.imageUrl; // Set bannerUrl here
+                } else {
+                    console.error('Error uploading image:', response.status);
+                }
+            } catch (error) {
+                console.error('Error uploading image:', error);
+            }
+        }
+
         const blogData = {
-            banner: imgbbData.data.image.url,
+            banner: bannerUrl,
             title,
             upazila,
             author,
@@ -75,7 +91,7 @@ const AddBlog = () => {
             content,
             date: new Date()
         };
-        // console.log(blogData);
+         console.log(blogData);
         fetch(`${baseUrl}/news`, {
             method: 'POST',
             headers: {
@@ -140,7 +156,7 @@ const AddBlog = () => {
 
                     <FormGroup>
                         <Label className='font-monospace fs-5 text-primary' for="banner">Banner:</Label>
-                        <Input className='border-success-subtle' accept="image/*" name="banner" id="banner" type='file' onChange={(e) => setProgramImage(e.target.files[0])} required />
+                        <Input className='border-success-subtle' accept="image/*" name="banner" id="banner" type='file' onChange={(e) => setSelectedImage(e.target.files[0])} required />
                     </FormGroup>
 
                     <FormGroup className='bg-white px-2'>

@@ -199,3 +199,6 @@ body.dark-mode {
   }
 }
 
+a.link-hover.nav-link.fw-normal.active {
+  background-color: #332121;
+}
