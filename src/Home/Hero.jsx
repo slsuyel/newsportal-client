@@ -4,6 +4,7 @@ import useAllNews from "../hooks/useAllNews";
 import SkeletonLoader from "../components/utilities/SkeletonLoader";
 import NewsCard3 from "./NewsCard3";
 import HeroNewsCard from "./HeroNewsCard";
+import { baseUrl } from "../baseurl/baseurl";
 
 const Hero = () => {
 
@@ -20,7 +21,7 @@ const Hero = () => {
 
             <div className="col-md-6 position-relative">
                 <div className="img-contain">
-                    <img src={first.banner} alt="Zoomable Image" />
+                    <img src= {`${baseUrl}${first.banner}`} alt="Zoomable Image" />
                     <div className="overlay"></div>
                 </div>
 

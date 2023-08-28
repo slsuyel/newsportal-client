@@ -51,7 +51,7 @@ const News = () => {
 
                     <div className="mx-auto row w-100 my-4">
                         <div className="col-md-8 col-sm-12 col-xl-8">
-                            <img src={news.banner} alt="" className="img-fluid rounded-1 w-100" style={{maxHeight :'400px'}} />
+                            <img src={`${baseUrl}${news.banner}`} alt="" className="img-fluid rounded-1 w-100" style={{maxHeight :'400px'}} />
                             <div>
                                 <p className="my-3">
                                     <div className='border lh-base mb-2 p-2 rounded-1 shadow-sm text-secondary'

@@ -6,6 +6,7 @@ import SkeletonLoader from "../../components/utilities/SkeletonLoader";
 import useByCategory from "../../hooks/useByCategory";
 import NewsCard from "../../Home/NewsCard";
 import RelatedNews from "../../Home/shared/RelatedNews";
+import { baseUrl } from "../../baseurl/baseurl";
 
 const Categories = () => {
     const { category } = useParams()
@@ -25,7 +26,7 @@ const Categories = () => {
                     <h3 className="mb-3 ms-2 my-2">{category}</h3>
                     <div className="col-md-6 position-relative">
                         <div className="img-contain">
-                            <img src={first?.banner} alt="Zoomable Image" />
+                            <img src={`${baseUrl}${first.banner}`} alt="Zoomable Image" />
                             <div className="overlay"></div>
                         </div>
 

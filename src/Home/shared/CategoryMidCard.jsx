@@ -4,6 +4,7 @@
 import { Link } from "react-router-dom";
 import NewsMidCard from "../NewsMidCard";
 import SkeletonLoader from "../../components/utilities/SkeletonLoader";
+import { baseUrl } from "../../baseurl/baseUrl";
 
 const CategoryMidCard = ({ header, Sidebar, isLoading, category }) => {
 
@@ -35,7 +36,7 @@ const CategoryMidCard = ({ header, Sidebar, isLoading, category }) => {
 
                 <div className="col-md-6">
                     <div className="mb-2 newscard shadow-sm rounded-1">
-                        <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/19/file_1692427632.jpg" alt="" className='img-fluid rounded ms-2' />
+                        <img src={`${baseUrl}${category[0].banner}`} alt="" className='img-fluid rounded ms-2' />
 
                         <div className='lh-base ms-2 mt-3 text-start'>
 

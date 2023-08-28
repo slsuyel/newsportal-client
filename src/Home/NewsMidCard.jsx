@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { baseUrl } from "../baseurl/baseurl";
 
 const NewsMidCard = ({ category }) => {
     if (!category) {
@@ -8,7 +9,7 @@ const NewsMidCard = ({ category }) => {
     // console.log(category);
     return (
         <div style={{ marginBottom: '2px' }} className="border-2 border-bottom border-danger my-1 newscard p-2 rounded-1">
-            <img src={category.banner} alt="" style={{ height: '163px' }} className="img-fluid mb-1 w-100 rounded" />
+            <img src={`${baseUrl}${category.banner}`} alt="" style={{ height: '163px' }} className="img-fluid mb-1 w-100 rounded" />
 
             <div className="mt-2">
                 <span className="text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> 8 ঘন্টা আগে</span>

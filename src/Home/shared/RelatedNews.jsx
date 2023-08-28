@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import SkeletonLoader from "../../components/utilities/SkeletonLoader";
 import useByCategory from "../../hooks/useByCategory";
+import { baseUrl } from "../../baseurl/baseurl";
 
 const RelatedNews = ({ news }) => {
 
@@ -21,7 +22,7 @@ const RelatedNews = ({ news }) => {
                 {
                     newsByCategory.map(category => <div key={category._id} style={{ marginBottom: '2px' }} className=" my-1  col-sm-12 col-md-3 px-2 rounded-1">
                         <div className="newscard h-100 border-2 border-bottom border-danger">
-                            <img src={category.banner} alt="" style={{ height: '180px' }} className="img-fluid mb-1 w-100 rounded" />
+                            <img src={`${baseUrl}${category.banner}`} alt="" style={{ height: '180px' }} className="img-fluid mb-1 w-100 rounded" />
 
                             <div className="mt-2">
                                 <span className="text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> 8 ঘন্টা আগে</span>
