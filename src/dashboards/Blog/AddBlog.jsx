@@ -42,6 +42,7 @@ const AddBlog = () => {
         { value: 'খুলনা', label: '  খুলনা' },
         { value: 'বরিশাল', label: '  বরিশাল' },
         { value: 'সিলেট', label: '  সিলেট' },
+        { value: 'খেলার খবর', label: '  খেলার খবর' },
         { value: 'রংপুর', label: '  রংপুর' },
         { value: 'ময়মনসিংহ', label: '  ময়মনসিংহ' },
         { value: 'অন্যান্য', label: 'অন্যান্য' },

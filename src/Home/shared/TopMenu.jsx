@@ -41,7 +41,7 @@ const TopMenu = ({ header, Sidebar, isLoading, newsData }) => {
                                     ))
                                     : null}
                             </p>
-                            <Link to={`/news/${newsData?.[0]._id}`} className="text-decoration-none text-dark ">
+                            <Link to={`/posts/${newsData?.[0]._id}`} className="text-decoration-none text-dark ">
                                 <h6 className="fs-4 lh-base onhover">{newsData?.[0].title}</h6>
                             </Link>
 
@@ -64,9 +64,9 @@ const TopMenu = ({ header, Sidebar, isLoading, newsData }) => {
                 <div className='col-md-3'>
                     {Sidebar && <Sidebar />}
 
-                    <div>
+                    {/* <div>
                         <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/Shopping-Bag.gif" alt="" className="img-fluid mt-2 py-2 rounded shadow" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

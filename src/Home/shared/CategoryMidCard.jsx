@@ -41,7 +41,7 @@ const CategoryMidCard = ({ header, Sidebar, isLoading, category }) => {
 
                             <span className="bg-white my-3 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
 
-                            <Link to={`/news/${category[0]?._id}`} className="text-decoration-none text-dark ">
+                            <Link to={`/posts/${category[0]?._id}`} className="text-decoration-none text-dark ">
                                 <h6 className="fs-4 lh-base">{category[0]?.title.slice(0, 80)}</h6>
                             </Link>
 

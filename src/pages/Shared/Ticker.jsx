@@ -5,7 +5,7 @@ import useLatestNews from '../../hooks/useLatestNews';
 
 const Ticker = () => {
 
-    const { newsData,  } = useLatestNews();
+    const { newsData, } = useLatestNews();
 
 
 
@@ -29,9 +29,9 @@ const Ticker = () => {
                         >
                             {
                                 newsData?.map(blog => (
-                                    <Link key={blog._id} to='/news' className='text-decoration-none  onhover'>
+                                    <Link key={blog._id} to={`/posts/${blog._id}`} className='text-decoration-none  onhover'>
                                         {blog?.title}
-                                         <svg className='mx-2 mb-1' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                        <svg className='mx-2 mb-1' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                             <circle cx="10" cy="10" r="9" fill="red" />
                                         </svg>
 

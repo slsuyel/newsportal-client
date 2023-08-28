@@ -28,7 +28,7 @@ const TopMenuCard4 = ({ allNews }) => {
                   ))
                   : null}
               </p>
-              <Link to={`/news/${newsItem._id}`} className="text-decoration-none ">
+              <Link to={`/posts/${newsItem._id}`} className="text-decoration-none ">
                 <p style={{ fontSize: '14px' }} className="mb-0 fw-normal lh-base">{newsItem.title.slice(0, 60)}...</p>
               </Link>
             </div>

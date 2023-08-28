@@ -30,8 +30,8 @@ const NewsCard3 = ({ allNews }) => {
                                     ))
                                     : null}
                             </p>
-                            <Link to={`/news/${newsItem._id}`} className="text-decoration-none text-dark ">
-                                <h6 className="fw-normal lh-base mb-3">{newsItem.title.slice(0, 45)}</h6>
+                            <Link to={`/posts/${newsItem._id}`} className="text-decoration-none text-dark ">
+                                <h6 className="fw-normal lh-base mb-3">{newsItem.title.slice(0, 43)}</h6>
                             </Link>
                         </div>
                     </div>

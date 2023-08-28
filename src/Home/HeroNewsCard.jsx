@@ -21,8 +21,8 @@ const HeroNewsCard = ({ allNews }) => {
                                     </span>
                                 ))
                                 : null} </p>
-                            <Link to={`/news/${news._id}`} className="text-decoration-none text-dark ">
-                                <h6 className="fw-normal lh-base mb-3">{news.title.slice(0,45)}</h6>
+                            <Link to={`/posts/${news._id}`} className="text-decoration-none text-dark ">
+                            <p style={{ fontSize: '14px' }} className="mb-0 fw-normal lh-base">{news.title.slice(0, 60)}...</p>
                             </Link>
                         </div>
                     </div>

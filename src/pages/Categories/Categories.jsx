@@ -1,51 +1,62 @@
-import { Link } from "react-router-dom";
-import NewsMidCard from "../../Home/NewsMidCard";
-import Sidebar1 from "../../Home/sidebars/Sidebar1";
+
+import { Link, useParams } from "react-router-dom";
+import HeroNewsCard from "../../Home/HeroNewsCard";
+import NewsCard3 from "../../Home/NewsCard3";
+import SkeletonLoader from "../../components/utilities/SkeletonLoader";
+import useByCategory from "../../hooks/useByCategory";
+import NewsCard from "../../Home/NewsCard";
+import RelatedNews from "../../Home/shared/RelatedNews";
 
 const Categories = () => {
+    const { category } = useParams()
+
+    const { newsByCategory, isLoading } = useByCategory(`${category && category}`)
+
+    if (isLoading) {
+        return <SkeletonLoader />
+    }
+
+    const first = newsByCategory[0]
+
     return (
-        <div className="my-5 container-fluid">
-            <h3 className="mb-3 ms-2 my-2">জাতীয়</h3>
-
-            <div className="row w-100 mx-auto">
-                <div className="col-sm-12 col-md-6">
-
-                    <div className=" position-relative">
+        <>
+            {
+                newsByCategory.length > 0 ? < div className="row w-100 mx-auto mx-4">
+                    <h3 className="mb-3 ms-2 my-2">{category}</h3>
+                    <div className="col-md-6 position-relative">
                         <div className="img-contain">
-                            <img src="https://backend.newsnow24.com/storage/photos/shares/news/2023/08/18/file_1692372304.jpg" alt="Zoomable Image" />
+                            <img src={first?.banner} alt="Zoomable Image" />
                             <div className="overlay"></div>
                         </div>
 
                         <div className="position-absolute title-text">
                             <span className="bg-white px-2 py-1 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
-                            <Link to={`/news`} className="text-decoration-none text-white ">  <h4 className="mt-3">ভোটগ্রহণ কর্মকর্তাদের নিয়োগ নীতিমালা নিয়ে বসছে ইসি</h4></Link>
+                            <Link to={`/posts/${first?._id}`} className="text-decoration-none text-white ">  <h4 className="mt-3">{first?.title}</h4></Link>
                         </div>
                     </div>
 
+                    <NewsCard3 allNews={newsByCategory} />
 
-
-                    <div className="d-flex gap-2">
-                        <NewsMidCard />
-                        <NewsMidCard />
+                    <div className="col-md-3">
+                        <div className="w-100 mx-auto">
+                            <a href="" className="text-center">  <img src="http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className="img-fluid rounded shadow-sm " /></a>
+                        </div>
+                        <NewsCard />
                     </div>
-                    <div className="d-flex gap-2">
-                        <NewsMidCard />
-                        <NewsMidCard />
+                    <HeroNewsCard allNews={newsByCategory} />
+
+                </div >
+
+
+                    : <div>
+                        No data
                     </div>
 
-
-                </div>
-                <div className="col-sm-6 col-md-3">
-                    <NewsMidCard />
-                    <NewsMidCard />
-                    <NewsMidCard />
-                </div>
-                <div className="col-sm-6 col-md-3">
-                    <Sidebar1 />
-                </div>
-
+            }
+            <div className="mx-3">
+                {first && <RelatedNews news={first} />}
             </div>
-        </div>
+        </>
     );
 };
 

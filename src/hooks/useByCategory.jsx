@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { baseUrl } from "../baseurl/baseurl";
+ import { baseUrl } from "../baseurl/baseurl";
 
 function useByCategory(category) {
     const [newsByCategory, setNewsByCategory] = useState([]);

@@ -20,9 +20,10 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/news",
+                path: "/posts/:id",
                 element: <News />,
             },
+           
             {
                 path: "/loader",
                 element: <SkeletonLoader />,

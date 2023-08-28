@@ -2,8 +2,8 @@
 import { Link } from "react-router-dom";
 
 const TopMenuCard6 = ({ allNews }) => {
-    if (!allNews || !Array.isArray(allNews)) { 
-        return null; 
+    if (!allNews || !Array.isArray(allNews)) {
+        return null;
     }
     const slicedNews = allNews.slice(5, 11);
 
@@ -27,8 +27,8 @@ const TopMenuCard6 = ({ allNews }) => {
                                 ))
                                 : null}
                         </p>
-                        <Link to={`/news/${newsItem._id}`} className="text-decoration-none text-dark ">
-                            <p className="fw-normal lh-base">{newsItem.title.slice(0, 50)} . . .</p>
+                        <Link to={`/posts/${newsItem._id}`} className="text-decoration-none ">
+                            <p style={{ fontSize: '15px' }} className="mb-0 fw-normal lh-base">{newsItem.title.slice(0, 55)}...</p>
                         </Link>
                     </div>
                 </div>

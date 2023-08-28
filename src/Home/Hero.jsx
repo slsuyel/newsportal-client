@@ -13,7 +13,7 @@ const Hero = () => {
         return <SkeletonLoader />
     }
 
-    const first = allNews[0]
+    const first = allNews[1]
 
     return (
         <div className="row w-100 mx-auto mx-4">
@@ -26,7 +26,7 @@ const Hero = () => {
 
                 <div className="position-absolute title-text">
                     <span className="bg-white px-2 py-1 rounded text-danger text-nowrap text-sm"> <i className="fa-solid fa-clock"></i> ২ ঘন্টা আগে</span>
-                    <Link to={`/news/${first._id}`} className="text-decoration-none text-white ">  <h4 className="mt-3">{first.title}</h4></Link>
+                    <Link to={`/posts/${first._id}`} className="text-decoration-none text-white ">  <h4 className="mt-3">{first.title}</h4></Link>
                 </div>
             </div>
 

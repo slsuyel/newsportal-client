@@ -16,14 +16,12 @@ const Home = () => {
     const { newsByCategory: politics, isLoading: politicsLoading } = useByCategory('রাজনীতি')
     const { newsByCategory: national, isLoading: nationalLoading } = useByCategory('জাতীয়')
 
-
     return (
         <div className="mt-5">
             <Hero />
             <TopMenu header={'টপ টেন'} newsData={newsData} isLoading={latesLoading} Sidebar={Sidebar1} />
             <CategoryMidCard category={newsByCategory} isLoading={categoryLoading} header={'বাংলাদেশ'} Sidebar={MyAreaNews} />
             <TopMenu header={'জাতীয়'} newsData={national} isLoading={nationalLoading} />
-
             <CategoryMidCard category={politics} isLoading={politicsLoading} header={'রাজনীতি'} />
         </div>
     );

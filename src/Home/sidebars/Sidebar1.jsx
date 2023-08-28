@@ -9,14 +9,48 @@ import {
     Row,
     Col,
 } from 'reactstrap';
-const Sidebar1 = () => {
-    const [activeTab, setActiveTab] = useState('1');
+import useLatestNews from '../../hooks/useLatestNews';
 
+const Sidebar1 = () => {
+    const { newsData, isLoading } = useLatestNews()
+
+    const [activeTab, setActiveTab] = useState('1');
     const toggleTab = tab => {
         if (activeTab !== tab) {
             setActiveTab(tab);
         }
     };
+
+    if (isLoading) {
+        return <div className='border border-5 border-danger rounded-top-2'>
+          <div className=''>
+                <div className="skeleton">
+                    <div className="skeleton-left">
+                        <div className="line h17 w40 m10" />
+                        <div className="line" />
+                        <div className="line h8 w50" />
+                        <div className="line  w75" />
+                    </div>
+                    <div className="skeleton-right">
+                        <div className="square1" />
+                    </div>
+                </div>
+            </div>
+          <div className=''>
+                <div className="skeleton">
+                    <div className="skeleton-left">
+                        <div className="line h17 w40 m10" />
+                        <div className="line" />
+                        <div className="line h8 w50" />
+                        <div className="line  w75" />
+                    </div>
+                    <div className="skeleton-right">
+                        <div className="square1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
     return (
         <div className='border border-5 border-danger rounded-top-2'>
@@ -45,42 +79,12 @@ const Sidebar1 = () => {
                             <div>
                                 <ul className='p-0'>
 
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-                                    <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
-
-                                        <Link to={`/news`} className=' text-dark text-decoration-none'>11 বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
-                                        <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
-                                    </li>
-                                
-
-
-
+                                    {
+                                        newsData.slice(0, 7).map(news => <li key={news._id} className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
+                                            <Link to={`/posts/${news._id}`} className=' text-dark text-decoration-none'>{news.title} </Link>
+                                            <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
+                                        </li>)
+                                    }
 
                                 </ul>
                             </div>
@@ -92,14 +96,13 @@ const Sidebar1 = () => {
                         <Col sm="12" style={{ marginBottom: '-16px' }}>
                             <div>
                                 <ul className='p-0'>
-
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
                                         <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
                                         <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                     </li>
 
-                                 
+
                                     <li className='align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover '>
 
                                         <Link to={`/news`} className=' text-dark text-decoration-none'>বিএনপি মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর বলেছেন </Link>
@@ -135,7 +138,7 @@ const Sidebar1 = () => {
                         </Col>
                     </Row>
                 </TabPane>
-             
+
             </TabContent>
         </div>
     );
