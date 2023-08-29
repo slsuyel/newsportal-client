@@ -42,7 +42,7 @@ const Footer = () => {
                         155 No. Bagmoniram,Panchlaish, Chattogram 4800.<br />
 
                         Phone: +880 1913 427 319<br />
-                        Email: news@Voiceofjournalists.com<br />
+                        Email: news@Voiceofjourna.com<br />
 
                     </div>
                 </div>

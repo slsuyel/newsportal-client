@@ -15,6 +15,10 @@ const News = () => {
     const { id } = useParams();
 
     useEffect(() => {
+        window.scrollTo(0,0);
+     }, [])
+     
+    useEffect(() => {
         setLoading(true);  // Set loading to true initially
         fetch(`${baseUrl}/posts/${id}`)
             .then(res => res.json())

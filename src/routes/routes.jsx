@@ -10,6 +10,7 @@ import DashHome from "../dashboards/Dash-Home/DashHome";
 import AddBlog from "../dashboards/Blog/AddBlog";
 import Blogs from "../dashboards/Blog/Blogs";
 import Setting from "../dashboards/Setting/Setting";
+import ScrollToTop from "../components/ScrollToTop";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/posts/:id",
-                element: <News />,
+                element: <ScrollToTop><News /></ScrollToTop>,
             },
 
             {
